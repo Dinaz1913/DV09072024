@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+    <hr>
+    <h2>Comments</h2>
+    {% for comment in comments %}
+        <p><strong>{{ comment.username }}:</strong> {{ comment.content }}</p>
+    {% else %}
+        <p>No comments yet.</p>
+    {% endfor %}
+
+    {% if session.user_id %}
+        <form action="/articles/{{ article.id }}/comment" method="POST">
+            <label for="content">Comment:</label>
+            <textarea id="content" name="content" placeholder="Write your comment"></textarea>
+            <button type="submit">Submit Comment</button>
+        </form>
+    {% else %}
+        <p>You must <a href="/login">log in</a> to comment.</p>
+    {% endif %}
+{% endblock %}

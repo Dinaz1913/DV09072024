@@ -1,0 +1,27 @@
+{
+    "name": "app/app",
+    "description": "Here is website App where you can create an Article, update, delete, edit.",
+    "type": "project",
+    "require": {
+        "slim/psr7": "^1.7",
+        "monolog/monolog": "^3.7",
+        "php-di/php-di": "^7.0",
+        "vlucas/phpdotenv": "^5.6",
+        "twig/twig": "^3.10",
+        "slim/slim": "^4.0",
+        "slim/twig-view": "^3.4",
+      "ext-pdo": "*",
+        "symfony/dotenv": "^7.1"
+    },
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"        }
+    },
+    "authors": [
+        {
+            "name": "dinaz12"
+        }
+    ],
+    "minimum-stability": "stable"
+}
